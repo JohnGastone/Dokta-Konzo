@@ -102,8 +102,34 @@ class _HomepageState extends State<Homepage> {
                     decoration: BoxDecoration(
                         color: Color.fromARGB(255, 226, 206, 230),
                         borderRadius: BorderRadius.circular(20)),
-                    child: Column(
-                      children: [Align()],
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: CircleAvatar(
+                              radius: 28,
+                              backgroundImage:
+                                  AssetImage("./assets/cardio.png"),
+                            ),
+                          ),
+                          Padding(
+                              padding: const EdgeInsets.only(right: 45),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    "Cardio",
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 28,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                  Text("12 doctors",
+                                      style: GoogleFonts.poppins(fontSize: 20))
+                                ],
+                              )),
+                        ],
+                      ),
                     ),
                   )
                 ],
