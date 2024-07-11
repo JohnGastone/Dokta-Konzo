@@ -13,7 +13,7 @@ class Onboardingcarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OnBoardingSlider(
-      finishButtonText: 'Register',
+      finishButtonText: 'Get Started',
       onFinish: () {
         Navigator.push(
           context,
@@ -27,14 +27,6 @@ class Onboardingcarousel extends StatelessWidget {
       ),
       skipTextButton: Text(
         'Skip',
-        style: GoogleFonts.poppins(
-          fontSize: 16,
-          color: kDarkBlueColor,
-          fontWeight: FontWeight.w600,
-        ),
-      ),
-      trailing: Text(
-        'Login',
         style: GoogleFonts.poppins(
           fontSize: 16,
           color: kDarkBlueColor,
@@ -55,15 +47,15 @@ class Onboardingcarousel extends StatelessWidget {
       pageBackgroundColor: Colors.white,
       background: [
         Image.asset(
-          'assets/111.png',
+          'assets/konzo1.png',
           height: 400,
           width: 400,
           fit: BoxFit.cover,
         ),
         Image.asset(
-          'assets/222.png',
+          'assets/konzo2.png',
           height: 400,
-          width: 400,
+          width: 365,
           fit: BoxFit.cover,
         ),
         Image.asset(
