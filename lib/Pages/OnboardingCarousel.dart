@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:doktakonzo/Pages/HomePage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
@@ -18,7 +19,7 @@ class Onboardingcarousel extends StatelessWidget {
         Navigator.push(
           context,
           CupertinoPageRoute(
-            builder: (context) => const Onboardingcarousel(),
+            builder: (context) => const Homepage(),
           ),
         );
       },

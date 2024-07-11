@@ -1,4 +1,4 @@
-import 'package:doktakonzo/OnboardingCarousel.dart';
+import 'package:doktakonzo/Pages/OnboardingCarousel.dart';
 import 'package:flutter/material.dart';
 
 void main() {
