@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -20,9 +21,57 @@ class _HomepageState extends State<Homepage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
-              children: [],
+              children: [
+                ClipOval(
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage("./assets/konzo1.png"),
+                    radius: 28,
+                  ),
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Habari,",
+                      style:
+                          GoogleFonts.poppins(fontSize: 16, color: Colors.grey),
+                    ),
+                    Text("Mr Konzo",
+                        style: GoogleFonts.poppins(
+                            fontSize: 16, fontWeight: FontWeight.bold))
+                  ],
+                )
+              ],
             ),
-            Container()
+            Container(
+              height: 55,
+              width: 150,
+              decoration: BoxDecoration(
+                  color: const Color.fromARGB(60, 181, 177, 177),
+                  borderRadius: BorderRadius.circular(25)),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                      icon: Icon(
+                        CupertinoIcons.bell,
+                      ),
+                      onPressed: () {},
+                    ),
+                    CircleAvatar(
+                      backgroundColor: Colors.white,
+                      radius: 23,
+                      child: Icon(Icons.menu_open_rounded),
+                    )
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
