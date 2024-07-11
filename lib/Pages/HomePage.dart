@@ -75,15 +75,21 @@ class _HomepageState extends State<Homepage> {
           ],
         ),
       ),
-      body: Center(
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Dr Konzo Stays here",
+                "Karibu tukutafutie",
                 style: GoogleFonts.poppins(
-                  fontSize: 20,
-                ),
+                    fontSize: 23, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "tabibu atakaekufaa",
+                style: GoogleFonts.poppins(
+                    fontSize: 28, fontWeight: FontWeight.bold),
               )
             ],
           ),
