@@ -82,14 +82,31 @@ class _HomepageState extends State<Homepage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Karibu tukutafutie",
+                "Let's find",
                 style: GoogleFonts.poppins(
                     fontSize: 23, fontWeight: FontWeight.bold),
               ),
               Text(
-                "tabibu atakaekufaa",
+                "your suitable doctor",
                 style: GoogleFonts.poppins(
                     fontSize: 28, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Row(
+                children: [
+                  Container(
+                    height: 190,
+                    width: 150,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 226, 206, 230),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Column(
+                      children: [Align()],
+                    ),
+                  )
+                ],
               )
             ],
           ),
