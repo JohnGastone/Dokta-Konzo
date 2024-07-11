@@ -2,7 +2,7 @@
     <application
         android:label="Dr Konzo"
         android:name="${applicationName}"
-        android:icon="@mipmap/konzo">
+        android:icon="@mipmap/drkonzo">
         <activity
             android:name=".MainActivity"
             android:exported="true"
