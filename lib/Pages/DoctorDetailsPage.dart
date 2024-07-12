@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class DoctorDetailsPage extends StatefulWidget {
   const DoctorDetailsPage({super.key});
@@ -12,6 +13,23 @@ class DoctorDetailsPage extends StatefulWidget {
 }
 
 class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
+  late GoogleMapController mapController;
+
+  final LatLng _center = const LatLng(-6.8161, 37.667);
+
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
+  }
+
+  Future<void> _requestPermission() async {
+    var status = await Permission.location.status;
+    if (status.isDenied) {
+      if (await Permission.location.request().isGranted) {
+        // Either the permission was already granted before or the user just granted it.
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +71,7 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
         children: [
           SingleChildScrollView(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 8.0, left: 10, right: 10),
@@ -179,6 +198,9 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
                           )
                         ],
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
                       Text(
                         "Dr Maryam Mahwaya is the greatest cardiology specialist in the country since 2010. She has achieved several successful awards both in Tanzania and at international level for her wonderful contribution in the field...",
                         style: GoogleFonts.poppins(
@@ -187,6 +209,42 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
                     ],
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: Container(
+                    height: 200,
+                    width: 340,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: GoogleMap(
+                        onMapCreated: _onMapCreated,
+                        initialCameraPosition: CameraPosition(
+                          target: _center,
+                          zoom: 15.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Working Time",
+                        style: GoogleFonts.poppins(
+                            fontSize: 25, fontWeight: FontWeight.bold),
+                      ),
+                      Text("Mon-Fri: 04:30 PM - 07:30 PM",
+                          style: GoogleFonts.poppins(
+                              fontSize: 16, color: Colors.grey))
+                    ],
+                  ),
+                )
               ],
             ),
           ),
