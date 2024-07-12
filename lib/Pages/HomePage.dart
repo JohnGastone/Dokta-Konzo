@@ -262,6 +262,45 @@ class _HomepageState extends State<Homepage> {
                                 fit: BoxFit.cover,
                                 image: AssetImage("./assets/d2.jpeg")),
                             borderRadius: BorderRadius.circular(15)),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Dr. Maryam Mahwaya",
+                            style: GoogleFonts.poppins(
+                                fontSize: 19, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Wakombozi hospital",
+                            style: GoogleFonts.poppins(
+                                fontSize: 16, fontWeight: FontWeight.w500),
+                          ),
+                          Text("Cardiology",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 15, color: Colors.grey)),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                CupertinoIcons.clock,
+                                color: const Color.fromARGB(255, 90, 9, 104),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "4:30 PM - 7:30 PM",
+                                style: GoogleFonts.poppins(fontSize: 16),
+                              )
+                            ],
+                          )
+                        ],
                       )
                     ],
                   ),
