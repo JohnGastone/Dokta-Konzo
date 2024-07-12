@@ -150,7 +150,7 @@ class Onboardingcarousel extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               const SizedBox(
-                height: 450,
+                height: 430,
               ),
               Text(
                 'Effective prescription',
@@ -162,7 +162,7 @@ class Onboardingcarousel extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 15,
               ),
               Text(
                 'Choose from a variety of payment options, including Lipa no and cash.',
