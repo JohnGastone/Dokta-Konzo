@@ -239,6 +239,33 @@ class _HomepageState extends State<Homepage> {
                       style:
                           GoogleFonts.poppins(fontSize: 19, color: Colors.grey))
                 ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: 150,
+                width: 340,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 231, 226, 232),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 110,
+                        width: 110,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage("./assets/d2.jpeg")),
+                            borderRadius: BorderRadius.circular(15)),
+                      )
+                    ],
+                  ),
+                ),
               )
             ],
           ),
