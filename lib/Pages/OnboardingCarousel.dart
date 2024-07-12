@@ -165,7 +165,7 @@ class Onboardingcarousel extends StatelessWidget {
                 height: 15,
               ),
               Text(
-                "Take your time with physician of your choice, and grab the path to your health problem's solution.",
+                "Take your time with physician of your choice, and grab the path to your health problems' solution.",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   color: Colors.blueGrey,
