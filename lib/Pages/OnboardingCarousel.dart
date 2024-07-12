@@ -150,7 +150,7 @@ class Onboardingcarousel extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               const SizedBox(
-                height: 430,
+                height: 415,
               ),
               Text(
                 'Effective prescription',
@@ -165,7 +165,7 @@ class Onboardingcarousel extends StatelessWidget {
                 height: 15,
               ),
               Text(
-                'Choose from a variety of payment options, including Lipa no and cash.',
+                "Take your time with physician of your choice, and grab the path to your health problem's solution.",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   color: Colors.blueGrey,
