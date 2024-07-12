@@ -80,7 +80,7 @@ class Onboardingcarousel extends StatelessWidget {
                 height: 450,
               ),
               Text(
-                'Welcome to Alama',
+                'Welcome to Dr Konzo',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   color: kDarkBlueColor,
@@ -89,10 +89,10 @@ class Onboardingcarousel extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 15,
               ),
               Text(
-                'Discover the finest Tanzanian cuisine and enjoy a seamless dining experience',
+                'Discover the best Tanzanian physicians and enjoy a seamless healing experience',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   color: Colors.blueGrey,
