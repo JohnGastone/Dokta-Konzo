@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,6 +17,15 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
+        title: Row(
+          children: [
+            CircleAvatar(
+              backgroundColor: Colors.grey,
+              radius: 20,
+              child: Icon(Icons.arrow_back_ios),
+            )
+          ],
+        ),
       ),
       body: Stack(
         children: [
