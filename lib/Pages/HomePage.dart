@@ -226,6 +226,19 @@ class _HomepageState extends State<Homepage> {
               ),
               SizedBox(
                 height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Top doctors",
+                    style: GoogleFonts.poppins(
+                        fontSize: 22, fontWeight: FontWeight.bold),
+                  ),
+                  Text("See all",
+                      style:
+                          GoogleFonts.poppins(fontSize: 19, color: Colors.grey))
+                ],
               )
             ],
           ),
