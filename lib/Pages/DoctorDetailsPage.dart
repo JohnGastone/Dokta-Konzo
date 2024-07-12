@@ -15,7 +15,9 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         title: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -85,33 +87,22 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
                                 style: GoogleFonts.poppins(
                                     fontSize: 19, fontWeight: FontWeight.bold),
                               ),
-                              Text(
-                                "Wakombozi hospital",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 16, fontWeight: FontWeight.w500),
-                              ),
-                              Text("Cardiology",
+                              Text("Cardiologist",
                                   style: GoogleFonts.poppins(
                                       fontSize: 15, color: Colors.grey)),
                               SizedBox(
-                                height: 20,
+                                height: 15,
                               ),
-                              Row(
-                                children: [
-                                  Icon(
-                                    CupertinoIcons.clock,
-                                    color:
-                                        const Color.fromARGB(255, 90, 9, 104),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "4:30 PM - 7:30 PM",
-                                    style: GoogleFonts.poppins(fontSize: 16),
-                                  )
-                                ],
-                              )
+                              Text(
+                                "Wakombozi hospital",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 16,
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              Text("Morogoro, Tanzania",
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 15, color: Colors.grey)),
                             ],
                           )
                         ],
@@ -119,6 +110,35 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Text(
+                            "About",
+                            style: GoogleFonts.poppins(
+                                fontSize: 22, color: Colors.grey),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Container(
+                            height: 3,
+                            width: 50,
+                            decoration: BoxDecoration(
+                                color: Colors.grey,
+                                borderRadius: BorderRadius.circular(10)),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           ),
