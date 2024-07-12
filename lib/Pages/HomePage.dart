@@ -116,7 +116,7 @@ class _HomepageState extends State<Homepage> {
                             ),
                           ),
                           Padding(
-                              padding: const EdgeInsets.only(right: 45),
+                              padding: const EdgeInsets.only(right: 25),
                               child: Column(
                                 children: [
                                   Text(
@@ -132,11 +132,6 @@ class _HomepageState extends State<Homepage> {
                                   ),
                                   Row(
                                     children: [
-                                      CircleAvatar(
-                                        radius: 18,
-                                        backgroundImage:
-                                            AssetImage("./assets/konzo1.png"),
-                                      ),
                                       CircleAvatar(
                                         radius: 18,
                                         backgroundImage:
@@ -182,7 +177,7 @@ class _HomepageState extends State<Homepage> {
                             ),
                           ),
                           Padding(
-                              padding: const EdgeInsets.only(right: 40),
+                              padding: const EdgeInsets.only(right: 25),
                               child: Column(
                                 children: [
                                   Text(
@@ -198,11 +193,6 @@ class _HomepageState extends State<Homepage> {
                                   ),
                                   Row(
                                     children: [
-                                      CircleAvatar(
-                                        radius: 18,
-                                        backgroundImage:
-                                            AssetImage("./assets/konzo1.png"),
-                                      ),
                                       CircleAvatar(
                                         radius: 18,
                                         backgroundImage:
