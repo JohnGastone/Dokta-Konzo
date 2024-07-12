@@ -118,6 +118,7 @@ class _HomepageState extends State<Homepage> {
                           Padding(
                               padding: const EdgeInsets.only(right: 25),
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     "Cardio",
@@ -179,6 +180,7 @@ class _HomepageState extends State<Homepage> {
                           Padding(
                               padding: const EdgeInsets.only(right: 25),
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     "Dental",
