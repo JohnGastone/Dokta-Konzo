@@ -53,14 +53,17 @@ class Onboardingcarousel extends StatelessWidget {
           width: 400,
           fit: BoxFit.cover,
         ),
-        Image.asset(
-          'assets/konzo2.png',
-          height: 400,
-          width: 365,
-          fit: BoxFit.cover,
+        Padding(
+          padding: const EdgeInsets.only(left: 38.0),
+          child: Image.asset(
+            'assets/booking.png',
+            height: 400,
+            width: 300,
+            fit: BoxFit.cover,
+          ),
         ),
         Image.asset(
-          'assets/333.png',
+          'assets/pills.png',
           height: 400,
           width: 400,
           fit: BoxFit.cover,
@@ -77,7 +80,7 @@ class Onboardingcarousel extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               const SizedBox(
-                height: 450,
+                height: 430,
               ),
               Text(
                 'Welcome to Dr Konzo',
@@ -112,10 +115,10 @@ class Onboardingcarousel extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               const SizedBox(
-                height: 480,
+                height: 430,
               ),
               Text(
-                'Easy Ordering.',
+                'Easy booking.',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   color: kDarkBlueColor,
@@ -124,10 +127,10 @@ class Onboardingcarousel extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 15,
               ),
               Text(
-                'Browse our extensive menu and place your order with just few taps',
+                'Browse our extensive list of doctors and book an appointment with just few taps',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   color: Colors.blueGrey,
@@ -150,7 +153,7 @@ class Onboardingcarousel extends StatelessWidget {
                 height: 450,
               ),
               Text(
-                'Seamless Payments',
+                'Effective prescription',
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   color: kDarkBlueColor,
