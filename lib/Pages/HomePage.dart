@@ -24,7 +24,7 @@ class _HomepageState extends State<Homepage> {
               children: [
                 ClipOval(
                   child: CircleAvatar(
-                    backgroundImage: AssetImage("./assets/konzo1.png"),
+                    backgroundImage: AssetImage("./assets/p2.png"),
                     radius: 28,
                   ),
                 ),
@@ -39,7 +39,7 @@ class _HomepageState extends State<Homepage> {
                       style:
                           GoogleFonts.poppins(fontSize: 16, color: Colors.grey),
                     ),
-                    Text("Mr Konzo",
+                    Text("Mrs Konzo",
                         style: GoogleFonts.poppins(
                             fontSize: 16, fontWeight: FontWeight.bold))
                   ],
@@ -143,7 +143,7 @@ class _HomepageState extends State<Homepage> {
                                         CircleAvatar(
                                           radius: 18,
                                           backgroundImage:
-                                              AssetImage("./assets/konzo1.png"),
+                                              AssetImage("./assets/d2.jpeg"),
                                         ),
                                         CircleAvatar(
                                           radius: 18,
@@ -202,12 +202,12 @@ class _HomepageState extends State<Homepage> {
                                         CircleAvatar(
                                           radius: 18,
                                           backgroundImage:
-                                              AssetImage("./assets/konzo1.png"),
+                                              AssetImage("./assets/d3.jpeg"),
                                         ),
                                         CircleAvatar(
                                           radius: 18,
                                           backgroundImage:
-                                              AssetImage("./assets/konzo1.png"),
+                                              AssetImage("./assets/d4.jpeg"),
                                         ),
                                         CircleAvatar(
                                           radius: 18,
@@ -450,23 +450,101 @@ class _HomepageState extends State<Homepage> {
           ),
         ),
         Align(
-            alignment: Alignment.bottomCenter,
-            child: SizedBox(
+          alignment: Alignment.bottomCenter,
+          child: SizedBox(
+            width: 360,
+            child: Container(
+              height: 80,
               width: 360,
-              child: FloatingActionButton(
-                onPressed: () {},
-                child: Container(
-                  height: 50,
-                  width: 360,
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 227, 207, 231),
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(20),
-                        bottomRight: Radius.circular(20)),
-                  ),
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 227, 207, 231),
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20)),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 12, right: 12, bottom: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        IconButton(
+                          icon: Icon(CupertinoIcons.home),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => Homepage()));
+                          },
+                        ),
+                        Text(
+                          "Home",
+                          style: GoogleFonts.poppins(
+                              fontSize: 15, color: Colors.grey),
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        IconButton(
+                          icon: Icon(CupertinoIcons.calendar),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => Homepage()));
+                          },
+                        ),
+                        Text(
+                          "Appointments",
+                          style: GoogleFonts.poppins(
+                              fontSize: 15, color: Colors.grey),
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        IconButton(
+                          icon: Icon(CupertinoIcons.search),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => Homepage()));
+                          },
+                        ),
+                        Text(
+                          "Explore",
+                          style: GoogleFonts.poppins(
+                              fontSize: 15, color: Colors.grey),
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        IconButton(
+                          icon: Icon(CupertinoIcons.settings),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (context) => Homepage()));
+                          },
+                        ),
+                        Text(
+                          "Settings",
+                          style: GoogleFonts.poppins(
+                              fontSize: 15, color: Colors.grey),
+                        )
+                      ],
+                    ),
+                  ],
                 ),
               ),
-            ))
+            ),
+          ),
+        )
       ]),
     );
   }
