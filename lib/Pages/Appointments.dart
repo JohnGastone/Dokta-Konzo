@@ -43,14 +43,17 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Text(
-              "My Appointments",
-              style: GoogleFonts.poppins(
-                  fontSize: 23, fontWeight: FontWeight.w500),
-            )
-          ],
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
+          child: Column(
+            children: [
+              Text(
+                "My Appointments",
+                style: GoogleFonts.poppins(
+                    fontSize: 23, fontWeight: FontWeight.w500),
+              )
+            ],
+          ),
         ),
       ),
     );
