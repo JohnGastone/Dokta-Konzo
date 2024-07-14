@@ -111,7 +111,7 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                                 fontSize: 19, fontWeight: FontWeight.bold),
                           ),
                           SizedBox(
-                            height: 25,
+                            height: 35,
                           ),
                           Row(
                             children: [
