@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -98,13 +98,19 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "Voice Call - Accepted",
-                            style: GoogleFonts.poppins(
-                                fontSize: 16,
-                                color: Colors.grey,
-                                fontWeight: FontWeight.w500),
-                          ),
+                          Text.rich(TextSpan(children: <TextSpan>[
+                            TextSpan(
+                                text: "Voice Call -",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 16,
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w500)),
+                            TextSpan(
+                                text: " Accepted",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 16,
+                                    color: Color.fromARGB(255, 66, 18, 118))),
+                          ])),
                           Text(
                             "Dr. Maryam Mahwaya",
                             style: GoogleFonts.poppins(
@@ -135,7 +141,7 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                 ),
               ),
               SizedBox(
-                height: 15,
+                height: 20,
               ),
               Container(
                 height: 130,
@@ -183,13 +189,18 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "Video Call - Declined",
-                            style: GoogleFonts.poppins(
-                                fontSize: 16,
-                                color: Colors.grey,
-                                fontWeight: FontWeight.w500),
-                          ),
+                          Text.rich(TextSpan(children: <TextSpan>[
+                            TextSpan(
+                                text: "Video Call -",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 16,
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w500)),
+                            TextSpan(
+                                text: " Declined",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 16, color: Colors.redAccent)),
+                          ])),
                           Text(
                             "Dr. Ethan Mahwaya",
                             style: GoogleFonts.poppins(
@@ -220,7 +231,7 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                 ),
               ),
               SizedBox(
-                height: 15,
+                height: 20,
               ),
               Container(
                 height: 130,
@@ -268,13 +279,19 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "Message - Read",
-                            style: GoogleFonts.poppins(
-                                fontSize: 16,
-                                color: Colors.grey,
-                                fontWeight: FontWeight.w500),
-                          ),
+                          Text.rich(TextSpan(children: <TextSpan>[
+                            TextSpan(
+                                text: "Message -",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 16,
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w500)),
+                            TextSpan(
+                                text: " Read",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 16,
+                                    color: Color.fromARGB(255, 66, 18, 118))),
+                          ])),
                           Text(
                             "Dr. Kipwiru Bwakila",
                             style: GoogleFonts.poppins(
