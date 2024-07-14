@@ -256,7 +256,7 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
                 width: 340,
                 height: 60,
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 72, 28, 130),
+                    color: Color.fromARGB(255, 66, 18, 118),
                     borderRadius: BorderRadius.circular(10)),
                 child: Center(
                   child: Text(

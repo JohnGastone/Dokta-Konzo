@@ -79,7 +79,7 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                               height: 30,
                               width: 30,
                               decoration: BoxDecoration(
-                                color: Colors.purpleAccent,
+                                color: Color.fromARGB(255, 66, 18, 118),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Center(
@@ -117,7 +117,177 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                             children: [
                               Icon(
                                 CupertinoIcons.clock,
-                                color: const Color.fromARGB(255, 90, 9, 104),
+                                color: Color.fromARGB(255, 66, 18, 118),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "4:30 PM - 7:30 PM",
+                                style: GoogleFonts.poppins(fontSize: 16),
+                              )
+                            ],
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                height: 130,
+                width: 330,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Color.fromARGB(255, 239, 235, 235),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 110,
+                        width: 110,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage("./assets/d1.jpeg")),
+                            borderRadius: BorderRadius.circular(15)),
+                        child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 66, 18, 118),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Center(
+                                child: Icon(
+                                  CupertinoIcons.videocam,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Video Call - Declined",
+                            style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          Text(
+                            "Dr. Ethan Mahwaya",
+                            style: GoogleFonts.poppins(
+                                fontSize: 19, fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 35,
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                CupertinoIcons.clock,
+                                color: Color.fromARGB(255, 66, 18, 118),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "5:30 PM - 7:30 PM",
+                                style: GoogleFonts.poppins(fontSize: 16),
+                              )
+                            ],
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                height: 130,
+                width: 330,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Color.fromARGB(255, 239, 235, 235),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 110,
+                        width: 110,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage("./assets/d3.jpeg")),
+                            borderRadius: BorderRadius.circular(15)),
+                        child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              height: 30,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 66, 18, 118),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Center(
+                                child: Icon(
+                                  Icons.message,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Message - Read",
+                            style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          Text(
+                            "Dr. Kipwiru Bwakila",
+                            style: GoogleFonts.poppins(
+                                fontSize: 19, fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 35,
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                CupertinoIcons.clock,
+                                color: Color.fromARGB(255, 66, 18, 118),
                               ),
                               SizedBox(
                                 width: 10,
