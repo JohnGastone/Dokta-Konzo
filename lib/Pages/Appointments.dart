@@ -90,6 +90,7 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                               ),
                               child: Center(
                                 child: Icon(
+                                  size: 15,
                                   CupertinoIcons.phone,
                                   color: Colors.white,
                                 ),
@@ -181,6 +182,7 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                               ),
                               child: Center(
                                 child: Icon(
+                                  size: 15,
                                   CupertinoIcons.videocam,
                                   color: Colors.white,
                                 ),
@@ -271,6 +273,7 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                               ),
                               child: Center(
                                 child: Icon(
+                                  size: 15,
                                   Icons.message,
                                   color: Colors.white,
                                 ),
