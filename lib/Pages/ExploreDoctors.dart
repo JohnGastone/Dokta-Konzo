@@ -63,17 +63,91 @@ class _ExploreDoctorsState extends State<ExploreDoctors> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextField(
+                    style: GoogleFonts.poppins(
+                      fontSize: 17,
+                    ),
                     decoration: InputDecoration(
+                        border: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        errorBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
                         prefixIcon: Icon(
                           CupertinoIcons.search,
                           color: Colors.grey,
                         ),
-                        labelText: "Search doctor by name",
-                        labelStyle: GoogleFonts.poppins(
-                            fontSize: 17, color: Colors.grey)),
+                        hintText: "Search a doctor by name",
+                        hintStyle: GoogleFonts.poppins(
+                            fontSize: 18, color: Colors.grey)),
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: 150,
+                width: 340,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 231, 226, 232),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 110,
+                        width: 110,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage("./assets/d2.jpeg")),
+                            borderRadius: BorderRadius.circular(15)),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Dr. Maryam Mahwaya",
+                            style: GoogleFonts.poppins(
+                                fontSize: 19, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Wakombozi hospital",
+                            style: GoogleFonts.poppins(
+                                fontSize: 16, fontWeight: FontWeight.w500),
+                          ),
+                          Text("Cardiology",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 15, color: Colors.grey)),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                CupertinoIcons.clock,
+                                color: const Color.fromARGB(255, 90, 9, 104),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "4:30 PM - 7:30 PM",
+                                style: GoogleFonts.poppins(fontSize: 16),
+                              )
+                            ],
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
