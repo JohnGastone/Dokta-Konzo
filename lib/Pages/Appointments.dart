@@ -46,9 +46,10 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
         child: Padding(
           padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "My Appointments",
+                "May 2024",
                 style: GoogleFonts.poppins(
                     fontSize: 23, fontWeight: FontWeight.w500),
               ),
