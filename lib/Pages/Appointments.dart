@@ -52,7 +52,9 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
               SizedBox(
                 height: 15,
               ),
-              DatePicker(),
+              DatePicker(
+                initialDate: DateTime.now(),
+              ),
               SizedBox(
                 height: 15,
               ),
