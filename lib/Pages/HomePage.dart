@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:doktakonzo/Pages/Appointments.dart';
+import 'package:doktakonzo/Pages/ExploreDoctors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -523,7 +524,7 @@ class _HomepageState extends State<Homepage> {
                             Navigator.push(
                                 context,
                                 CupertinoPageRoute(
-                                    builder: (context) => Homepage()));
+                                    builder: (context) => ExploreDoctors()));
                           },
                         ),
                         Text(
