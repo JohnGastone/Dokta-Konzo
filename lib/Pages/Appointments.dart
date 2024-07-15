@@ -48,10 +48,96 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 15,
+              ),
               Text(
                 "May 2024",
                 style: GoogleFonts.poppins(
                     fontSize: 23, fontWeight: FontWeight.w500),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "M",
+                      style:
+                          GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
+                    ),
+                    Text(
+                      "T",
+                      style:
+                          GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
+                    ),
+                    Text(
+                      "W",
+                      style: GoogleFonts.poppins(fontSize: 15),
+                    ),
+                    Text(
+                      "T",
+                      style:
+                          GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
+                    ),
+                    Text(
+                      "F",
+                      style:
+                          GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
+                    ),
+                    Text(
+                      "S",
+                      style:
+                          GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
+                    ),
+                    Text(
+                      "S",
+                      style:
+                          GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "15",
+                      style: GoogleFonts.poppins(fontSize: 15),
+                    ),
+                    Text(
+                      "16",
+                      style: GoogleFonts.poppins(fontSize: 15),
+                    ),
+                    CircleAvatar(
+                      radius: 15,
+                      backgroundColor: Color.fromARGB(255, 66, 18, 118),
+                      child: Text(
+                        "17",
+                        style: GoogleFonts.poppins(
+                            fontSize: 15, color: Colors.white),
+                      ),
+                    ),
+                    Text(
+                      "18",
+                      style: GoogleFonts.poppins(fontSize: 15),
+                    ),
+                    Text(
+                      "19",
+                      style: GoogleFonts.poppins(fontSize: 15),
+                    ),
+                    Text(
+                      "20",
+                      style: GoogleFonts.poppins(fontSize: 15),
+                    ),
+                    Text(
+                      "21",
+                      style: GoogleFonts.poppins(fontSize: 15),
+                    ),
+                  ],
+                ),
               ),
               Container(
                 height: 130,
