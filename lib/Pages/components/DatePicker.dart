@@ -1,55 +1,82 @@
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: prefer_final_fields
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DatePicker extends StatefulWidget {
-  final DateTime initialDate;
-
-  const DatePicker({super.key, required this.initialDate});
-
   @override
   _DatePickerState createState() => _DatePickerState();
 }
 
 class _DatePickerState extends State<DatePicker> {
-  late DateTime _selectedDate;
-  late DateTime _firstDate;
-  late DateTime _lastDate;
+  DateTime _selectedDate = DateTime.now();
+  DateTime _currentMonth = DateTime.now();
   late ScrollController _controller;
 
   @override
   void initState() {
     super.initState();
-    _selectedDate = widget.initialDate;
-    _firstDate = DateTime(_selectedDate.year, _selectedDate.month - 1, 1);
-    _lastDate = DateTime(_selectedDate.year, _selectedDate.month + 1, 0);
-    _controller = ScrollController(
-        initialScrollOffset:
-            (_selectedDate.day - 1) * 50.0); // Adjust initial scroll position
+    _controller = ScrollController();
   }
 
-  void _onDateSelected(DateTime date) {
-    setState(() {
-      _selectedDate = date;
-    });
+  List<String> _months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ];
+
+  List<DropdownMenuItem<int>> get _dropdownMenuItems {
+    List<DropdownMenuItem<int>> items = [];
+    for (int i = 0; i < _months.length; i++) {
+      items.add(DropdownMenuItem(
+        value: i + 1,
+        child: Text(
+          _months[i],
+          style: GoogleFonts.poppins(fontSize: 15, color: Colors.white),
+        ),
+      ));
+    }
+    return items;
   }
 
-  Widget _buildDateRow(DateTime date) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: List.generate(7, (index) {
-        DateTime currentDate = date.add(Duration(days: index));
-        bool isSelected = currentDate.day == _selectedDate.day &&
-            currentDate.month == _selectedDate.month &&
-            currentDate.year == _selectedDate.year;
+  void _onMonthChanged(int? newMonth) {
+    if (newMonth != null) {
+      setState(() {
+        _currentMonth = DateTime(_currentMonth.year, newMonth);
+        _selectedDate = DateTime(_currentMonth.year, _currentMonth.month, 1);
+      });
+    }
+  }
 
-        return GestureDetector(
-          onTap: () => _onDateSelected(currentDate),
+  List<Widget> _buildDateRow() {
+    List<Widget> dateWidgets = [];
+    int daysInMonth =
+        DateTime(_currentMonth.year, _currentMonth.month + 1, 0).day;
+    for (int day = 1; day <= daysInMonth; day++) {
+      DateTime currentDate =
+          DateTime(_currentMonth.year, _currentMonth.month, day);
+      bool isSelected = currentDate.day == _selectedDate.day &&
+          currentDate.month == _selectedDate.month &&
+          currentDate.year == _selectedDate.year;
+
+      dateWidgets.add(
+        GestureDetector(
+          onTap: () => setState(() {
+            _selectedDate = currentDate;
+          }),
           child: CircleAvatar(
             radius: 20,
             backgroundColor: isSelected
-                ? const Color.fromARGB(255, 66, 18, 118)
+                ? Color.fromARGB(255, 66, 18, 118)
                 : Colors.transparent,
             child: Text(
               currentDate.day.toString(),
@@ -59,83 +86,79 @@ class _DatePickerState extends State<DatePicker> {
               ),
             ),
           ),
-        );
-      }),
-    );
+        ),
+      );
+    }
+    return dateWidgets;
   }
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 250,
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "${_selectedDate.month} ${_selectedDate.year}",
-                  style: GoogleFonts.poppins(
-                      fontSize: 23, fontWeight: FontWeight.w500),
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "${_months[_currentMonth.month - 1]} ${_currentMonth.year}",
+                style: GoogleFonts.poppins(
+                    fontSize: 23, fontWeight: FontWeight.w500),
+              ),
+              Container(
+                height: 50,
+                width: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Color.fromARGB(255, 66, 18, 118),
                 ),
-                Container(
-                  height: 50,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: const Color.fromARGB(255, 66, 18, 118),
-                  ),
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Pick a month",
-                            style: GoogleFonts.poppins(
-                                fontSize: 15, color: Colors.white),
-                          ),
-                          const Icon(Icons.arrow_drop_down,
-                              color: Colors.white),
-                        ],
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton<int>(
+                        dropdownColor: Color.fromARGB(255, 66, 18, 118),
+                        value: _currentMonth.month,
+                        items: _dropdownMenuItems,
+                        onChanged: _onMonthChanged,
                       ),
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(12.0),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: List.generate(7, (index) {
-                return Text(
-                  ["M", "T", "W", "T", "F", "S", "S"][index],
-                  style: GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Text(
+                    ["M", "T", "W", "T", "F", "S", "S"][index],
+                    style:
+                        GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
+                  ),
                 );
               }),
             ),
           ),
-          Expanded(
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              controller: _controller,
-              itemCount: ((_lastDate.difference(_firstDate).inDays) / 7).ceil(),
-              itemBuilder: (context, index) {
-                DateTime startDate = _firstDate.add(Duration(days: index * 7));
-                return Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: _buildDateRow(startDate),
-                );
-              },
+        ),
+        Expanded(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: _buildDateRow(),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
