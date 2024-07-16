@@ -60,7 +60,7 @@ class _CreateAppointmentState extends State<CreateAppointment> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    width: 150,
+                    width: 155,
                     height: 50,
                     decoration: BoxDecoration(
                         color: Color.fromARGB(255, 66, 18, 118),
@@ -96,7 +96,7 @@ class _CreateAppointmentState extends State<CreateAppointment> {
                     ),
                   ),
                   Container(
-                    width: 150,
+                    width: 155,
                     height: 50,
                     decoration: BoxDecoration(
                         border: Border.all(width: 1, color: Colors.grey),
@@ -126,7 +126,7 @@ class _CreateAppointmentState extends State<CreateAppointment> {
                           Text(
                             "Evening",
                             style: GoogleFonts.poppins(
-                                fontSize: 18, color: Colors.white),
+                                fontSize: 18, color: Colors.grey),
                           )
                         ],
                       ),
