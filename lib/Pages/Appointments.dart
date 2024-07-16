@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:doktakonzo/Pages/Appointment/Appointment.dart';
 import 'package:doktakonzo/Pages/components/DatePicker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -34,10 +35,16 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                 style: GoogleFonts.poppins(
                     fontSize: 22, fontWeight: FontWeight.w500),
               ),
-              CircleAvatar(
-                radius: 25,
-                backgroundColor: const Color.fromARGB(255, 227, 222, 222),
-                child: Icon(CupertinoIcons.plus),
+              InkWell(
+                child: CircleAvatar(
+                  radius: 25,
+                  backgroundColor: const Color.fromARGB(255, 227, 222, 222),
+                  child: Icon(CupertinoIcons.plus),
+                ),
+                onTap: () {
+                  Navigator.push(context,
+                      CupertinoPageRoute(builder: (context) => Appointment()));
+                },
               )
             ],
           ),

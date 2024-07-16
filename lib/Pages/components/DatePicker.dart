@@ -136,25 +136,6 @@ class _DatePickerState extends State<DatePicker> {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: List.generate(7, (index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: Text(
-                      ["M", "T", "W", "T", "F", "S", "S"][index],
-                      style:
-                          GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
-                    ),
-                  );
-                }),
-              ),
-            ),
-          ),
           Expanded(
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
