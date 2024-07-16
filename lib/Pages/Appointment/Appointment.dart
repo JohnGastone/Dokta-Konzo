@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:doktakonzo/Pages/components/DatePicker.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -48,13 +50,92 @@ class _CreateAppointmentState extends State<CreateAppointment> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Text(
-              "Appointment guide here:",
-              style: GoogleFonts.poppins(fontSize: 18),
-            )
-          ],
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10.0, right: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              DatePicker(initialDate: DateTime.now()),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    width: 150,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 66, 18, 118),
+                        borderRadius: BorderRadius.circular(12)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(12)),
+                            child: Center(
+                              child: Icon(
+                                Icons.light_mode,
+                                color: Color.fromARGB(255, 66, 18, 118),
+                                size: 20,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 30,
+                          ),
+                          Text(
+                            "Morning",
+                            style: GoogleFonts.poppins(
+                                fontSize: 18, color: Colors.white),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 150,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 1, color: Colors.grey),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 238, 233, 233),
+                                borderRadius: BorderRadius.circular(12)),
+                            child: Center(
+                              child: Icon(
+                                CupertinoIcons.sunset,
+                                color: Colors.grey,
+                                size: 20,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 30,
+                          ),
+                          Text(
+                            "Evening",
+                            style: GoogleFonts.poppins(
+                                fontSize: 18, color: Colors.white),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
