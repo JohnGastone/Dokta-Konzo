@@ -133,6 +133,33 @@ class _CreateAppointmentState extends State<CreateAppointment> {
                     ),
                   )
                 ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text("Fees information",
+                  style: GoogleFonts.poppins(
+                      fontSize: 22, fontWeight: FontWeight.w500)),
+              Row(
+                children: [
+                  Container(
+                    width: 100,
+                    height: 35,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(width: 1, color: Colors.grey)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Text(
+                          "09:00 AM",
+                          style: GoogleFonts.poppins(
+                              fontSize: 15, color: Colors.grey),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               )
             ],
           ),
