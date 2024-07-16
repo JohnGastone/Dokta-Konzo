@@ -42,8 +42,10 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                   child: Icon(CupertinoIcons.plus),
                 ),
                 onTap: () {
-                  Navigator.push(context,
-                      CupertinoPageRoute(builder: (context) => Appointment()));
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => CreateAppointment()));
                 },
               )
             ],

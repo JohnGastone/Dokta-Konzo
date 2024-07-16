@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Appointment extends StatefulWidget {
-  const Appointment({super.key});
+class CreateAppointment extends StatefulWidget {
+  const CreateAppointment({super.key});
 
   @override
-  State<Appointment> createState() => _AppointmentState();
+  State<CreateAppointment> createState() => _CreateAppointmentState();
 }
 
-class _AppointmentState extends State<Appointment> {
+class _CreateAppointmentState extends State<CreateAppointment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
