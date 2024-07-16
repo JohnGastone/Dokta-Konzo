@@ -134,12 +134,6 @@ class _CreateAppointmentState extends State<CreateAppointment> {
                   )
                 ],
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Text("Fees information",
-                  style: GoogleFonts.poppins(
-                      fontSize: 22, fontWeight: FontWeight.w500)),
               Row(
                 children: [
                   Container(
@@ -160,7 +154,13 @@ class _CreateAppointmentState extends State<CreateAppointment> {
                     ),
                   )
                 ],
-              )
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text("Fees information",
+                  style: GoogleFonts.poppins(
+                      fontSize: 22, fontWeight: FontWeight.w500)),
             ],
           ),
         ),
