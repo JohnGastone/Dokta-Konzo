@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:doktakonzo/Pages/components/DatePicker.dart';
+import 'package:doktakonzo/models.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,6 +14,12 @@ class CreateAppointment extends StatefulWidget {
 }
 
 class _CreateAppointmentState extends State<CreateAppointment> {
+  List<AppointmentTimesModel> displayAppointmentsMorningTimes =
+      List.from(AppointmentMorningTimesList.displayList);
+
+  List<AppointmentTimesModel> displayAppointmentsEveningTimes =
+      List.from(AppointmentEveningTimesList.getAppointmentTimes);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -137,19 +144,32 @@ class _CreateAppointmentState extends State<CreateAppointment> {
               SizedBox(
                 height: 20,
               ),
-              Container(
-                width: 100,
-                height: 35,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(width: 1, color: Colors.grey)),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Center(
-                    child: Text(
-                      "09:00 AM",
-                      style:
-                          GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
+              SizedBox(
+                height: 150,
+                width: 340,
+                child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 20,
+                  ),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: displayAppointmentsMorningTimes.length,
+                  itemBuilder: (context, index) => Container(
+                    width: 180,
+                    height: 35,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(width: 1, color: Colors.grey)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Text(
+                          displayAppointmentsMorningTimes[index].time!,
+                          style: GoogleFonts.poppins(
+                              fontSize: 15, color: Colors.grey),
+                        ),
+                      ),
                     ),
                   ),
                 ),
