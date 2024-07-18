@@ -145,7 +145,7 @@ class _CreateAppointmentState extends State<CreateAppointment> {
                 height: 20,
               ),
               SizedBox(
-                height: 150,
+                height: 180,
                 width: 340,
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -156,13 +156,13 @@ class _CreateAppointmentState extends State<CreateAppointment> {
                   scrollDirection: Axis.horizontal,
                   itemCount: displayAppointmentsMorningTimes.length,
                   itemBuilder: (context, index) => Container(
-                    width: 180,
+                    width: 120,
                     height: 35,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(width: 1, color: Colors.grey)),
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.only(left: 8.0, right: 8),
                       child: Center(
                         child: Text(
                           displayAppointmentsMorningTimes[index].time!,

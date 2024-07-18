@@ -22,6 +22,8 @@ class AppointmentEveningTimesList {
     AppointmentTimesModel('05:30 PM'),
     AppointmentTimesModel('06:00 PM'),
     AppointmentTimesModel('06:30 PM'),
+    AppointmentTimesModel('07:00 PM'),
+    AppointmentTimesModel('07:30 PM'),
   ];
   static List<AppointmentTimesModel> displayList =
       List.from(AppointmentEveningTimesList.getAppointmentTimes);
