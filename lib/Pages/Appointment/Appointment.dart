@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:doktakonzo/Pages/ExploreDoctors.dart';
 import 'package:doktakonzo/Pages/components/DatePicker.dart';
 import 'package:doktakonzo/models.dart';
 import 'package:flutter/cupertino.dart';
@@ -21,6 +22,7 @@ class _CreateAppointmentState extends State<CreateAppointment> {
 
   // State to manage the active button
   String activeButton = "Morning";
+  String? selectedFeeOption;
 
   AppointmentTimesModel? selectedTime;
 
@@ -92,189 +94,36 @@ class _CreateAppointmentState extends State<CreateAppointment> {
               SizedBox(
                 height: 15,
               ),
-              Container(
-                width: 330,
-                height: 81,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(width: 1, color: Colors.grey),
-                    borderRadius: BorderRadius.circular(20)),
-                child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            width: 50,
-                            height: 50,
-                            decoration: BoxDecoration(
-                                color: const Color.fromARGB(255, 224, 219, 219),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Center(
-                              child: Icon(
-                                CupertinoIcons.phone,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "Voice Call",
-                                style: GoogleFonts.poppins(fontSize: 15),
-                              ),
-                              SizedBox(
-                                height: 15,
-                              ),
-                              Text(
-                                "Make a voice call to the doctor",
-                                style: GoogleFonts.poppins(fontSize: 14),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Text(
-                        "\$10",
-                        style: GoogleFonts.poppins(fontSize: 20),
-                      )
-                    ],
+              _buildFeeOption("Voice Call", "\$10", CupertinoIcons.phone),
+              SizedBox(height: 15),
+              _buildFeeOption("Messaging", "\$5", CupertinoIcons.mail,
+                  defaultSelected: true), // Set Messaging as default selected
+              SizedBox(height: 15),
+              _buildFeeOption(
+                  "Video Call", "\$20", CupertinoIcons.video_camera),
+
+              SizedBox(height: 30),
+              InkWell(
+                child: Container(
+                  width: 330,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 66, 18, 118),
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Center(
+                    child: Text(
+                      "Continue",
+                      style: GoogleFonts.poppins(
+                          fontSize: 20, color: Colors.white),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Container(
-                width: 330,
-                height: 81,
-                decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.grey),
-                    color: const Color.fromARGB(255, 66, 18, 118),
-                    borderRadius: BorderRadius.circular(20)),
-                child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            width: 50,
-                            height: 50,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Center(
-                              child: Icon(
-                                CupertinoIcons.mail,
-                                color: Color.fromARGB(255, 66, 18, 118),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "Messaging",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 15, color: Colors.white),
-                              ),
-                              SizedBox(
-                                height: 15,
-                              ),
-                              Text(
-                                "Can message with the doctor",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 14, color: Colors.white),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Text(
-                        "\$5",
-                        style: GoogleFonts.poppins(
-                            fontSize: 20, color: Colors.white),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Container(
-                width: 330,
-                height: 81,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(width: 1, color: Colors.grey),
-                    borderRadius: BorderRadius.circular(20)),
-                child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            width: 50,
-                            height: 50,
-                            decoration: BoxDecoration(
-                                color: const Color.fromARGB(255, 224, 219, 219),
-                                borderRadius: BorderRadius.circular(10)),
-                            child: Center(
-                              child: Icon(
-                                CupertinoIcons.video_camera,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "Video Call",
-                                style: GoogleFonts.poppins(fontSize: 15),
-                              ),
-                              SizedBox(
-                                height: 15,
-                              ),
-                              Text(
-                                "Can video call with the doctor",
-                                style: GoogleFonts.poppins(fontSize: 14),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Text(
-                        "\$20",
-                        style: GoogleFonts.poppins(fontSize: 20),
-                      )
-                    ],
-                  ),
-                ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (context) => ExploreDoctors()));
+                },
               ),
               SizedBox(
                 height: 40,
@@ -398,6 +247,89 @@ class _CreateAppointmentState extends State<CreateAppointment> {
             ),
           );
         },
+      ),
+    );
+  }
+
+  Widget _buildFeeOption(String label, String price, IconData icon,
+      {bool defaultSelected = false}) {
+    final isSelected = selectedFeeOption == label;
+
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          selectedFeeOption = isSelected ? null : label; // Toggle selection
+        });
+      },
+      child: Container(
+        width: 330,
+        height: 81,
+        decoration: BoxDecoration(
+          color: isSelected
+              ? const Color.fromARGB(255, 66, 18, 118)
+              : Colors.white,
+          border: Border.all(
+              width: 1, color: isSelected ? Colors.transparent : Colors.grey),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Padding(
+          padding: EdgeInsets.all(12),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: isSelected
+                          ? Colors.white
+                          : const Color.fromARGB(255, 224, 219, 219),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                        child: Icon(icon,
+                            color: isSelected
+                                ? const Color.fromARGB(255, 66, 18, 118)
+                                : null)), // Conditional icon color
+                  ),
+                  SizedBox(width: 8),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 5),
+                      Text(
+                        label,
+                        style: GoogleFonts.poppins(
+                          fontSize: 15,
+                          color: isSelected
+                              ? Colors.white
+                              : null, // Conditional text color
+                        ),
+                      ),
+                      SizedBox(height: 15),
+                      Text(
+                        "Can $label with the doctor", // Updated description
+                        style: GoogleFonts.poppins(
+                          fontSize: 14,
+                          color: isSelected ? Colors.white : null,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Text(
+                price,
+                style: GoogleFonts.poppins(
+                  fontSize: 20,
+                  color: isSelected ? Colors.white : null,
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
