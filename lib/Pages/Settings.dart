@@ -79,7 +79,7 @@ class _SettingsPagesState extends State<SettingsPage> {
                     Row(
                       children: [
                         Text(
-                          "Off",
+                          notificationsEnabled ? "On" : "Off",
                           style: GoogleFonts.poppins(
                               fontSize: 18, color: Colors.grey),
                         ),
