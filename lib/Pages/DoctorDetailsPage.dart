@@ -14,8 +14,8 @@ class DoctorDetailsPage extends StatefulWidget {
 
 class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
   late GoogleMapController mapController;
-
   final LatLng _center = const LatLng(-6.8161, 37.667);
+  String _selectedSection = "About"; // Default to "About"
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
@@ -27,6 +27,90 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
       if (await Permission.location.request().isGranted) {
         // Either the permission was already granted before or the user just granted it.
       }
+    }
+  }
+
+  Widget _buildSectionButton(String label) {
+    final isSelected = _selectedSection == label;
+
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _selectedSection = label;
+        });
+      },
+      child: Column(
+        children: [
+          Text(
+            label,
+            style: GoogleFonts.poppins(
+              fontSize: 22,
+              color: isSelected ? Colors.black : Colors.grey,
+              fontWeight: isSelected
+                  ? FontWeight.bold
+                  : FontWeight.normal, // Make selected text bold
+            ),
+          ),
+          SizedBox(height: 10),
+          Container(
+            height: 3,
+            width: 50,
+            decoration: BoxDecoration(
+              color: isSelected
+                  ? Color.fromARGB(255, 66, 18, 118)
+                  : Colors.grey, // Highlight selected section
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSectionContent(String section) {
+    switch (section) {
+      case "About":
+        return Column(
+          // Example Column for "About"
+          children: [
+            Text(
+              "Dr Maryam Mahwaya is the greatest cardiology specialist in the country since 2010. She has achieved several successful awards both in Tanzania and at international level for her wonderful contribution in the field...",
+              style: GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
+            ),
+            // Add more widgets as needed for the About section
+          ],
+        );
+      case "Review":
+        return Row(
+          // Example Row for "Review"
+          children: [
+            Text("This is the review",
+                style: GoogleFonts.poppins(fontSize: 15, color: Colors.grey)),
+            // Add more widgets as needed for the Review section
+          ],
+        );
+      case "Rating":
+        return Text(
+          // Example Text for "Rating"
+          "This is the rating",
+          style: GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
+        );
+      default:
+        return Container(); // Return an empty container for unknown sections
+    }
+  }
+
+  // Function to get the text for the selected section
+  String _getSectionText(String section) {
+    switch (section) {
+      case "About":
+        return "Dr Maryam Mahwaya is the greatest cardiology specialist in the country since 2010. She has achieved several successful awards both in Tanzania and at international level for her wonderful contribution in the field...";
+      case "Review":
+        return "This is the review";
+      case "Rating":
+        return "This is the rating";
+      default:
+        return "";
     }
   }
 
@@ -139,73 +223,15 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Column(
-                            children: [
-                              Text(
-                                "About",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 22, color: Colors.grey),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Container(
-                                height: 3,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    color: Colors.grey,
-                                    borderRadius: BorderRadius.circular(10)),
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                "Review",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 22, color: Colors.grey),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Container(
-                                height: 3,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    color: Colors.grey,
-                                    borderRadius: BorderRadius.circular(10)),
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Text(
-                                "Rating",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 22, color: Colors.grey),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Container(
-                                height: 3,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    color: Colors.grey,
-                                    borderRadius: BorderRadius.circular(10)),
-                              )
-                            ],
-                          )
+                          _buildSectionButton("About"),
+                          _buildSectionButton("Review"),
+                          _buildSectionButton("Rating"),
                         ],
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Dr Maryam Mahwaya is the greatest cardiology specialist in the country since 2010. She has achieved several successful awards both in Tanzania and at international level for her wonderful contribution in the field...",
-                        style: GoogleFonts.poppins(
-                            fontSize: 15, color: Colors.grey),
-                      )
+                      SizedBox(height: 10),
+
+                      // Flexible space for dynamic content
+                      _buildSectionContent(_selectedSection),
                     ],
                   ),
                 ),
