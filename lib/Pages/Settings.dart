@@ -43,7 +43,8 @@ class _SettingsPagesState extends State<SettingsPage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding:
+              const EdgeInsets.only(top: 12.0, bottom: 12, left: 8, right: 8),
           child: Column(
             children: [
               Container(
@@ -99,6 +100,9 @@ class _SettingsPagesState extends State<SettingsPage> {
                     )
                   ],
                 ),
+              ),
+              Divider(
+                color: Colors.grey,
               )
             ],
           ),
