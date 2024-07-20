@@ -40,8 +40,22 @@ class _SettingsPagesState extends State<SettingsPage> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [],
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            children: [
+              Container(
+                  width: 330,
+                  height: 70,
+                  decoration: BoxDecoration(),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      children: [],
+                    ),
+                  ))
+            ],
+          ),
         ),
       ),
     );
