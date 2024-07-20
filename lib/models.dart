@@ -32,4 +32,18 @@ class AppointmentEveningTimesList {
 class SettingsItemsModel {
   String? image;
   String? title;
+  SettingsItemsModel(this.image, this.title);
+}
+
+class SettingsItemsList {
+  static List<SettingsItemsModel> getSettingsItems = [
+    SettingsItemsModel('./assets/crown.png', 'Become a Pro'),
+    SettingsItemsModel(
+        './assets/add-a-person-outlined-interface-sign.png', 'Invite a friend'),
+    SettingsItemsModel('./assets/heart.png', 'Favorite doctors'),
+    SettingsItemsModel('./assets/qn.png', 'FAQs'),
+    SettingsItemsModel('./assets/help.png', 'Help'),
+  ];
+  static List<SettingsItemsModel> displayList =
+      List.from(SettingsItemsList.getSettingsItems);
 }
