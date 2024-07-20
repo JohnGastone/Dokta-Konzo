@@ -2,6 +2,7 @@
 
 import 'package:doktakonzo/Pages/Appointment/Appointments.dart';
 import 'package:doktakonzo/Pages/ExploreDoctors.dart';
+import 'package:doktakonzo/Pages/Settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -542,7 +543,7 @@ class _HomepageState extends State<Homepage> {
                             Navigator.push(
                                 context,
                                 CupertinoPageRoute(
-                                    builder: (context) => Homepage()));
+                                    builder: (context) => SettingsPage()));
                           },
                         ),
                         Text(

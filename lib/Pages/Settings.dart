@@ -4,14 +4,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SettingsPages extends StatefulWidget {
-  const SettingsPages({super.key});
+class SettingsPage extends StatefulWidget {
+  const SettingsPage({super.key});
 
   @override
-  State<SettingsPages> createState() => _SettingsPagesState();
+  State<SettingsPage> createState() => _SettingsPagesState();
 }
 
-class _SettingsPagesState extends State<SettingsPages> {
+class _SettingsPagesState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
