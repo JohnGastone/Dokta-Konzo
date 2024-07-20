@@ -12,6 +12,8 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPagesState extends State<SettingsPage> {
+  bool notificationsEnabled = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,15 +47,59 @@ class _SettingsPagesState extends State<SettingsPage> {
           child: Column(
             children: [
               Container(
-                  width: 330,
-                  height: 70,
-                  decoration: BoxDecoration(),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Row(
-                      children: [],
+                width: 330,
+                height: 70,
+                decoration: BoxDecoration(),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Color.fromARGB(255, 207, 185, 229)),
+                          child: Center(
+                            child: Icon(
+                              CupertinoIcons.bell_fill,
+                              color: Color.fromARGB(255, 66, 18, 118),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        Text(
+                          "Notification",
+                          style: GoogleFonts.poppins(
+                              fontSize: 18, color: Colors.grey),
+                        )
+                      ],
                     ),
-                  ))
+                    Row(
+                      children: [
+                        Text(
+                          "Off",
+                          style: GoogleFonts.poppins(
+                              fontSize: 18, color: Colors.grey),
+                        ),
+                        Switch(
+                          value: notificationsEnabled,
+                          activeColor:
+                              Color.fromARGB(255, 66, 18, 118), // Custom color
+                          onChanged: (bool value) {
+                            setState(() {
+                              notificationsEnabled = value;
+                              // Here you would typically update your app's notification settings
+                              // or preferences
+                            });
+                          },
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),
