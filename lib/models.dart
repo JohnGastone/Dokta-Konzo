@@ -28,3 +28,8 @@ class AppointmentEveningTimesList {
   static List<AppointmentTimesModel> displayList =
       List.from(AppointmentEveningTimesList.getAppointmentTimes);
 }
+
+class SettingsItemsModel {
+  String? image;
+  String? title;
+}

@@ -13,6 +13,7 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPagesState extends State<SettingsPage> {
   bool notificationsEnabled = false;
+  String _selectedLanguage = "English";
 
   @override
   Widget build(BuildContext context) {
@@ -91,13 +92,65 @@ class _SettingsPagesState extends State<SettingsPage> {
                           onChanged: (bool value) {
                             setState(() {
                               notificationsEnabled = value;
-                              // Here you would typically update your app's notification settings
-                              // or preferences
                             });
                           },
                         ),
                       ],
                     )
+                  ],
+                ),
+              ),
+              Divider(
+                color: Colors.grey,
+              ),
+              Container(
+                width: 330,
+                height: 70,
+                decoration: BoxDecoration(),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Color.fromARGB(255, 207, 185, 229)),
+                          child: Center(
+                            child: Icon(
+                              CupertinoIcons.globe,
+                              color: Color.fromARGB(255, 66, 18, 118),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        Text(
+                          "Language",
+                          style: GoogleFonts.poppins(
+                              fontSize: 18, color: Colors.grey),
+                        )
+                      ],
+                    ),
+                    DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        value: _selectedLanguage,
+                        items: <String>["English", "Kiswahili"]
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value,
+                                style: GoogleFonts.poppins(fontSize: 18)),
+                          );
+                        }).toList(),
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            _selectedLanguage = newValue!;
+                          });
+                        },
+                      ),
+                    ),
                   ],
                 ),
               ),
