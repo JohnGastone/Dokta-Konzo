@@ -20,13 +20,15 @@ class _SettingsPagesState extends State<SettingsPage> {
         title: Padding(
           padding: const EdgeInsets.all(10),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ClipOval(
                 child: CircleAvatar(
                   backgroundImage: AssetImage("./assets/p2.png"),
                   radius: 28,
                 ),
+              ),
+              SizedBox(
+                width: 55,
               ),
               Text(
                 "Settings",
