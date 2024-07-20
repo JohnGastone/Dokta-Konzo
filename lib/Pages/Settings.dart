@@ -184,7 +184,12 @@ class _SettingsPagesState extends State<SettingsPage> {
                                     borderRadius: BorderRadius.circular(15),
                                     color: Color.fromARGB(255, 207, 185, 229)),
                                 child: Center(
-                                    child: Text(displayItems[index].image!)),
+                                    child: Container(
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              displayItems[index].image!))),
+                                )),
                               ),
                               SizedBox(width: 10),
                               Text(
