@@ -104,8 +104,11 @@ class _SettingsPagesState extends State<SettingsPage> {
                   ],
                 ),
               ),
-              Divider(
-                color: Colors.grey,
+              SizedBox(
+                width: 280,
+                child: Divider(
+                  color: Colors.grey,
+                ),
               ),
               Container(
                 width: 330,
@@ -158,8 +161,11 @@ class _SettingsPagesState extends State<SettingsPage> {
                   ],
                 ),
               ),
-              Divider(
-                color: Colors.grey,
+              SizedBox(
+                width: 280,
+                child: Divider(
+                  color: Colors.grey,
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 31.0, right: 30),
@@ -185,8 +191,8 @@ class _SettingsPagesState extends State<SettingsPage> {
                                     color: Color.fromARGB(255, 207, 185, 229)),
                                 child: Center(
                                     child: Container(
-                                  height: 40,
-                                  width: 40,
+                                  height: 25,
+                                  width: 25,
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
                                           image: AssetImage(
