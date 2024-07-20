@@ -74,7 +74,7 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
           // Example Column for "About"
           children: [
             Text(
-              "Dr Maryam Mahwaya is the greatest cardiology specialist in the country since 2010. She has achieved several successful awards both in Tanzania and at international level for her wonderful contribution in the field...",
+              "Dr Maryam Mahwaya is the greatest cardiology specialist in the country since 2010. She has achieved several successful awards both in Tanzania and at international level for her wonderful contribution in Cardiology field...",
               style: GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
             ),
             // Add more widgets as needed for the About section
@@ -97,20 +97,6 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
         );
       default:
         return Container(); // Return an empty container for unknown sections
-    }
-  }
-
-  // Function to get the text for the selected section
-  String _getSectionText(String section) {
-    switch (section) {
-      case "About":
-        return "Dr Maryam Mahwaya is the greatest cardiology specialist in the country since 2010. She has achieved several successful awards both in Tanzania and at international level for her wonderful contribution in the field...";
-      case "Review":
-        return "This is the review";
-      case "Rating":
-        return "This is the rating";
-      default:
-        return "";
     }
   }
 
