@@ -185,6 +185,8 @@ class _SettingsPagesState extends State<SettingsPage> {
                                     color: Color.fromARGB(255, 207, 185, 229)),
                                 child: Center(
                                     child: Container(
+                                  height: 40,
+                                  width: 40,
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
                                           image: AssetImage(
