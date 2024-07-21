@@ -90,10 +90,14 @@ class _DoctorDetailsPageState extends State<DoctorDetailsPage> {
           ],
         );
       case "Rating":
-        return Text(
-          // Example Text for "Rating"
-          "This is the rating",
-          style: GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
+        return Column(
+          children: [
+            Text(
+              // Example Text for "Rating"
+              "This is the rating",
+              style: GoogleFonts.poppins(fontSize: 15, color: Colors.grey),
+            ),
+          ],
         );
       default:
         return Container(); // Return an empty container for unknown sections
