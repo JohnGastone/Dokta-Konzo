@@ -102,12 +102,12 @@ class _ExploreDoctorsState extends State<ExploreDoctors> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding: const EdgeInsets.all(7.0),
                         child: Row(
                           children: [
                             Container(
-                              height: 100,
-                              width: 100,
+                              height: 105,
+                              width: 105,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                       fit: BoxFit.cover,
