@@ -3,6 +3,7 @@
 import 'package:doktakonzo/Pages/Appointment/Appointments.dart';
 import 'package:doktakonzo/Pages/ExploreDoctors.dart';
 import 'package:doktakonzo/Pages/Settings.dart';
+import 'package:doktakonzo/models.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,6 +18,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  List<DoctorsModel> getDoctors = List.from(DoctorsList.displayList);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,138 +102,289 @@ class _HomepageState extends State<Homepage> {
                 SizedBox(
                   height: 15,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      height: 190,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 226, 206, 230),
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            Align(
-                              alignment: Alignment.topLeft,
-                              child: CircleAvatar(
-                                radius: 28,
-                                backgroundImage:
-                                    AssetImage("./assets/cardio.png"),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            height: 190,
+                            width: 150,
+                            decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 226, 206, 230),
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Align(
+                                    alignment: Alignment.topLeft,
+                                    child: CircleAvatar(
+                                      radius: 28,
+                                      backgroundImage:
+                                          AssetImage("./assets/cardio.png"),
+                                    ),
+                                  ),
+                                  Padding(
+                                      padding: const EdgeInsets.only(right: 25),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "Cardio",
+                                            style: GoogleFonts.poppins(
+                                                fontSize: 28,
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                          Text("12 doctors",
+                                              style: GoogleFonts.poppins(
+                                                  fontSize: 20)),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Row(
+                                            children: [
+                                              CircleAvatar(
+                                                radius: 18,
+                                                backgroundImage: AssetImage(
+                                                    "./assets/konzo1.png"),
+                                              ),
+                                              CircleAvatar(
+                                                radius: 18,
+                                                backgroundImage: AssetImage(
+                                                    "./assets/d2.jpeg"),
+                                              ),
+                                              CircleAvatar(
+                                                radius: 18,
+                                                child: Text(
+                                                  "+5",
+                                                  style: GoogleFonts.poppins(
+                                                      fontSize: 13,
+                                                      fontWeight:
+                                                          FontWeight.w500),
+                                                ),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      )),
+                                ],
                               ),
                             ),
-                            Padding(
-                                padding: const EdgeInsets.only(right: 25),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Cardio",
-                                      style: GoogleFonts.poppins(
-                                          fontSize: 28,
-                                          fontWeight: FontWeight.w600),
+                          ),
+                          Container(
+                            height: 190,
+                            width: 150,
+                            decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 226, 206, 230),
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Align(
+                                    alignment: Alignment.topLeft,
+                                    child: CircleAvatar(
+                                      radius: 28,
+                                      backgroundImage:
+                                          AssetImage("./assets/tooth.png"),
                                     ),
-                                    Text("12 doctors",
-                                        style:
-                                            GoogleFonts.poppins(fontSize: 20)),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Row(
-                                      children: [
-                                        CircleAvatar(
-                                          radius: 18,
-                                          backgroundImage:
-                                              AssetImage("./assets/konzo1.png"),
-                                        ),
-                                        CircleAvatar(
-                                          radius: 18,
-                                          backgroundImage:
-                                              AssetImage("./assets/d2.jpeg"),
-                                        ),
-                                        CircleAvatar(
-                                          radius: 18,
-                                          child: Text(
-                                            "+5",
+                                  ),
+                                  Padding(
+                                      padding: const EdgeInsets.only(right: 25),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "Dental",
                                             style: GoogleFonts.poppins(
-                                                fontSize: 13,
-                                                fontWeight: FontWeight.w500),
+                                                fontSize: 28,
+                                                fontWeight: FontWeight.w600),
                                           ),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                )),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 190,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 226, 206, 230),
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            Align(
-                              alignment: Alignment.topLeft,
-                              child: CircleAvatar(
-                                radius: 28,
-                                backgroundImage:
-                                    AssetImage("./assets/tooth.png"),
+                                          Text("09 doctors",
+                                              style: GoogleFonts.poppins(
+                                                  fontSize: 20)),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Row(
+                                            children: [
+                                              CircleAvatar(
+                                                radius: 18,
+                                                backgroundImage: AssetImage(
+                                                    "./assets/d3.jpeg"),
+                                              ),
+                                              CircleAvatar(
+                                                radius: 18,
+                                                backgroundImage: AssetImage(
+                                                    "./assets/d4.jpeg"),
+                                              ),
+                                              CircleAvatar(
+                                                radius: 18,
+                                                child: Text(
+                                                  "+5",
+                                                  style: GoogleFonts.poppins(
+                                                      fontSize: 13,
+                                                      fontWeight:
+                                                          FontWeight.w500),
+                                                ),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      )),
+                                ],
                               ),
                             ),
-                            Padding(
-                                padding: const EdgeInsets.only(right: 25),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Dental",
-                                      style: GoogleFonts.poppins(
-                                          fontSize: 28,
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    Text("09 doctors",
-                                        style:
-                                            GoogleFonts.poppins(fontSize: 20)),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    Row(
-                                      children: [
-                                        CircleAvatar(
-                                          radius: 18,
-                                          backgroundImage:
-                                              AssetImage("./assets/d3.jpeg"),
-                                        ),
-                                        CircleAvatar(
-                                          radius: 18,
-                                          backgroundImage:
-                                              AssetImage("./assets/d4.jpeg"),
-                                        ),
-                                        CircleAvatar(
-                                          radius: 18,
-                                          child: Text(
-                                            "+5",
-                                            style: GoogleFonts.poppins(
-                                                fontSize: 13,
-                                                fontWeight: FontWeight.w500),
-                                          ),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                )),
-                          ],
-                        ),
+                          )
+                        ],
                       ),
-                    )
-                  ],
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            height: 190,
+                            width: 150,
+                            decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 226, 206, 230),
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Align(
+                                    alignment: Alignment.topLeft,
+                                    child: CircleAvatar(
+                                      radius: 28,
+                                      backgroundImage:
+                                          AssetImage("./assets/cardio.png"),
+                                    ),
+                                  ),
+                                  Padding(
+                                      padding: const EdgeInsets.only(right: 25),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "Cardio",
+                                            style: GoogleFonts.poppins(
+                                                fontSize: 28,
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                          Text("12 doctors",
+                                              style: GoogleFonts.poppins(
+                                                  fontSize: 20)),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Row(
+                                            children: [
+                                              CircleAvatar(
+                                                radius: 18,
+                                                backgroundImage: AssetImage(
+                                                    "./assets/konzo1.png"),
+                                              ),
+                                              CircleAvatar(
+                                                radius: 18,
+                                                backgroundImage: AssetImage(
+                                                    "./assets/d2.jpeg"),
+                                              ),
+                                              CircleAvatar(
+                                                radius: 18,
+                                                child: Text(
+                                                  "+5",
+                                                  style: GoogleFonts.poppins(
+                                                      fontSize: 13,
+                                                      fontWeight:
+                                                          FontWeight.w500),
+                                                ),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      )),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: 190,
+                            width: 150,
+                            decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 226, 206, 230),
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Align(
+                                    alignment: Alignment.topLeft,
+                                    child: CircleAvatar(
+                                      radius: 28,
+                                      backgroundImage:
+                                          AssetImage("./assets/tooth.png"),
+                                    ),
+                                  ),
+                                  Padding(
+                                      padding: const EdgeInsets.only(right: 25),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "Dental",
+                                            style: GoogleFonts.poppins(
+                                                fontSize: 28,
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                          Text("09 doctors",
+                                              style: GoogleFonts.poppins(
+                                                  fontSize: 20)),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Row(
+                                            children: [
+                                              CircleAvatar(
+                                                radius: 18,
+                                                backgroundImage: AssetImage(
+                                                    "./assets/d3.jpeg"),
+                                              ),
+                                              CircleAvatar(
+                                                radius: 18,
+                                                backgroundImage: AssetImage(
+                                                    "./assets/d4.jpeg"),
+                                              ),
+                                              CircleAvatar(
+                                                radius: 18,
+                                                child: Text(
+                                                  "+5",
+                                                  style: GoogleFonts.poppins(
+                                                      fontSize: 13,
+                                                      fontWeight:
+                                                          FontWeight.w500),
+                                                ),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      )),
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 20,
@@ -252,212 +405,93 @@ class _HomepageState extends State<Homepage> {
                 SizedBox(
                   height: 20,
                 ),
-                InkWell(
-                  child: Container(
-                    height: 150,
-                    width: 340,
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 231, 226, 232),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Row(
-                        children: [
-                          Container(
-                            height: 110,
-                            width: 110,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage("./assets/d2.jpeg")),
-                                borderRadius: BorderRadius.circular(15)),
+                SizedBox(
+                  height: 600,
+                  child: ListView.builder(
+                    itemCount: getDoctors.length,
+                    itemBuilder: (context, index) => InkWell(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: 150,
+                          width: 340,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 231, 226, 232),
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                          SizedBox(
-                            width: 10,
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Row(
+                              children: [
+                                Container(
+                                  height: 105,
+                                  width: 105,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: AssetImage(
+                                              getDoctors[index].image!)),
+                                      borderRadius: BorderRadius.circular(15)),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      getDoctors[index].name!,
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 19,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      getDoctors[index].hospital!,
+                                      style: GoogleFonts.poppins(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    Text(getDoctors[index].specialization!,
+                                        style: GoogleFonts.poppins(
+                                            fontSize: 15, color: Colors.grey)),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          CupertinoIcons.clock,
+                                          color: const Color.fromARGB(
+                                              255, 90, 9, 104),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Text(
+                                          getDoctors[index].availability!,
+                                          style:
+                                              GoogleFonts.poppins(fontSize: 16),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Dr. Maryam Mahwaya",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 19, fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                "Wakombozi hospital",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 16, fontWeight: FontWeight.w500),
-                              ),
-                              Text("Cardiology",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 15, color: Colors.grey)),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Row(
-                                children: [
-                                  Icon(
-                                    CupertinoIcons.clock,
-                                    color:
-                                        const Color.fromARGB(255, 90, 9, 104),
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "4:30 PM - 7:30 PM",
-                                    style: GoogleFonts.poppins(fontSize: 16),
-                                  )
-                                ],
-                              )
-                            ],
-                          )
-                        ],
+                        ),
                       ),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        CupertinoPageRoute(
-                            builder: (context) => DoctorDetailsPage()));
-                  },
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  height: 150,
-                  width: 340,
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 231, 226, 232),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 110,
-                          width: 110,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage("./assets/d1.jpeg")),
-                              borderRadius: BorderRadius.circular(15)),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Dr. Ethan Mahwaya",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 19, fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              "Mahwaya Urologists",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 16, fontWeight: FontWeight.w500),
-                            ),
-                            Text("Urology",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 15, color: Colors.grey)),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  CupertinoIcons.clock,
-                                  color: const Color.fromARGB(255, 90, 9, 104),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Text(
-                                  "5:30 PM - 7:30 PM",
-                                  style: GoogleFonts.poppins(fontSize: 16),
-                                )
-                              ],
-                            )
-                          ],
-                        )
-                      ],
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) => DoctorDetailsPage()));
+                      },
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  height: 150,
-                  width: 340,
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 231, 226, 232),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 110,
-                          width: 110,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage("./assets/d3.jpeg")),
-                              borderRadius: BorderRadius.circular(15)),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Dr. Kipwiru Bwakila",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 19, fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              "Honero Dentals",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 16, fontWeight: FontWeight.w500),
-                            ),
-                            Text("Dentistry",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 15, color: Colors.grey)),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  CupertinoIcons.clock,
-                                  color: const Color.fromARGB(255, 90, 9, 104),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Text(
-                                  "3:30 PM - 7:30 PM",
-                                  style: GoogleFonts.poppins(fontSize: 16),
-                                )
-                              ],
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
+                  height: 50,
                 ),
               ],
             ),
