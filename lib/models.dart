@@ -46,3 +46,11 @@ class SettingsItemsList {
   static List<SettingsItemsModel> displayList =
       List.from(SettingsItemsList.getSettingsItems);
 }
+
+class DoctorsModel {
+  String? image;
+  String? name;
+  String? specialization;
+  String? hospital;
+  DoctorsModel(this.image, this.name, this.specialization, this.hospital);
+}
