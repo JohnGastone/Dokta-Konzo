@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_const_declarations
 
 import 'package:doktakonzo/Pages/Appointment/Appointments.dart';
 import 'package:doktakonzo/Pages/ExploreDoctors.dart';
@@ -18,7 +18,9 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  int _selectedIndex = 0; // State variable to track selected index
   List<DoctorsModel> getDoctors = List.from(DoctorsList.displayList);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -515,78 +517,13 @@ class _HomepageState extends State<Homepage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      children: [
-                        IconButton(
-                          icon: Icon(CupertinoIcons.home),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                CupertinoPageRoute(
-                                    builder: (context) => Homepage()));
-                          },
-                        ),
-                        Text(
-                          "Home",
-                          style: GoogleFonts.poppins(
-                              fontSize: 15, color: Colors.grey),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        IconButton(
-                          icon: Icon(CupertinoIcons.calendar),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                CupertinoPageRoute(
-                                    builder: (context) => AppointmentsPage()));
-                          },
-                        ),
-                        Text(
-                          "Appointments",
-                          style: GoogleFonts.poppins(
-                              fontSize: 15, color: Colors.grey),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        IconButton(
-                          icon: Icon(CupertinoIcons.search),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                CupertinoPageRoute(
-                                    builder: (context) => ExploreDoctors()));
-                          },
-                        ),
-                        Text(
-                          "Explore",
-                          style: GoogleFonts.poppins(
-                              fontSize: 15, color: Colors.grey),
-                        )
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        IconButton(
-                          icon: Icon(CupertinoIcons.settings),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                CupertinoPageRoute(
-                                    builder: (context) => SettingsPage()));
-                          },
-                        ),
-                        Text(
-                          "Settings",
-                          style: GoogleFonts.poppins(
-                              fontSize: 15, color: Colors.grey),
-                        )
-                      ],
-                    ),
+                    _buildNavItem(CupertinoIcons.home, "Home", 0, Homepage()),
+                    _buildNavItem(CupertinoIcons.calendar, "Appointments", 1,
+                        AppointmentsPage()),
+                    _buildNavItem(
+                        CupertinoIcons.search, "Explore", 2, ExploreDoctors()),
+                    _buildNavItem(
+                        CupertinoIcons.settings, "Settings", 3, SettingsPage()),
                   ],
                 ),
               ),
@@ -594,6 +531,41 @@ class _HomepageState extends State<Homepage> {
           ),
         )
       ]),
+    );
+  }
+
+  // Function to build each navigation item
+  Widget _buildNavItem(
+      IconData icon, String label, int index, Widget pageToNavigate) {
+    final isSelected =
+        _selectedIndex == index; // Check if this item is selected
+    final activeColor = const Color.fromARGB(255, 90, 9, 104); // Active color
+
+    return Column(
+      children: [
+        IconButton(
+          icon: Icon(
+            icon,
+            color: isSelected ? activeColor : Colors.grey, // Conditional color
+          ),
+          onPressed: () {
+            setState(() {
+              _selectedIndex = index; // Update the selected index
+            });
+            Navigator.push(
+              context,
+              CupertinoPageRoute(builder: (context) => pageToNavigate),
+            );
+          },
+        ),
+        Text(
+          label,
+          style: GoogleFonts.poppins(
+            fontSize: 15,
+            color: isSelected ? activeColor : Colors.grey,
+          ),
+        )
+      ],
     );
   }
 }

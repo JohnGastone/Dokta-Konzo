@@ -54,7 +54,7 @@ class _CreateAppointmentState extends State<CreateAppointment> {
                 width: 50,
               ),
               Text(
-                "Appointment",
+                "New Appointment",
                 style: GoogleFonts.poppins(
                     fontSize: 20, fontWeight: FontWeight.w600),
               )
@@ -94,10 +94,14 @@ class _CreateAppointmentState extends State<CreateAppointment> {
               SizedBox(
                 height: 15,
               ),
-              _buildFeeOption("Voice Call", "\$10", CupertinoIcons.phone),
+              _buildFeeOption(
+                "Messaging",
+                "\$5",
+                CupertinoIcons.mail,
+              ),
               SizedBox(height: 15),
-              _buildFeeOption("Messaging", "\$5", CupertinoIcons.mail,
-                  defaultSelected: true), // Set Messaging as default selected
+              _buildFeeOption("Voice Call", "\$10", CupertinoIcons.phone),
+              // Set Messaging as default selected
               SizedBox(height: 15),
               _buildFeeOption(
                   "Video Call", "\$20", CupertinoIcons.video_camera),
