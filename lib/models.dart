@@ -52,7 +52,9 @@ class DoctorsModel {
   String? name;
   String? specialization;
   String? hospital;
-  DoctorsModel(this.image, this.name, this.specialization, this.hospital);
+  String? availability;
+  DoctorsModel(this.image, this.name, this.specialization, this.hospital,
+      this.availability);
 }
 
 class DoctorsList {
@@ -62,17 +64,37 @@ class DoctorsList {
       'Dr.Maryam Mahwaya',
       'Cardiologist',
       'Wakombozi Hospital',
+      '4:30 PM - 7:30 PM',
     ),
-    DoctorsModel('./assets/d1.jpeg', 'Dr. Ethan Mahwaya', 'Urologist',
-        'Mahwaya Urologists'),
-    DoctorsModel('./assets/d3.jpeg', 'Dr. Kipwiru Bwakila', 'Dentist',
-        'Tumaini Medical Center'),
-    DoctorsModel('./assets/d2.jpeg', 'Dr. Sabrina Honero', 'Pediatrician',
-        'STU Medical Center'),
-    DoctorsModel('./assets/d3.jpeg', 'Dr. Konzo Kilakshal',
-        'Orthopedic Surgeon', 'VWX Medical Center'),
-    DoctorsModel('./assets/d2.jpeg', 'Dr. Sarah Wilson', 'Urologist',
-        'YZW Medical Center'),
+    DoctorsModel(
+      './assets/d1.jpeg',
+      'Dr. Ethan Mahwaya',
+      'Urologist',
+      'Mahwaya Urologists',
+      '5:30 PM - 7:30 PM',
+    ),
+    DoctorsModel(
+      './assets/d3.jpeg',
+      'Dr. Kipwiru Bwakila',
+      'Dentist',
+      'Tumaini Medical Center',
+      '6:30 PM - 8:30 PM',
+    ),
+    DoctorsModel(
+      './assets/d2.jpeg',
+      'Dr. Sabrina Honero',
+      'Pediatrician',
+      'STU Medical Center',
+      '3:30 PM - 8:30 PM',
+    ),
+    DoctorsModel(
+        './assets/d3.jpeg',
+        'Dr. Konzo Kilakshal',
+        'Orthopedic Surgeon',
+        'Ubaya Ubwela Orthopaedic Surgeons',
+        '5:30 PM - 7:00 PM'),
+    DoctorsModel('./assets/d2.jpeg', 'Dr. Sarah Wilson', 'Radiologist',
+        'Njiapanda Medics Center', '5:30 PM - 7:00 PM'),
   ];
   static List<DoctorsModel> displayList = List.from(DoctorsList.getDoctorsList);
 }
