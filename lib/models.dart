@@ -54,3 +54,25 @@ class DoctorsModel {
   String? hospital;
   DoctorsModel(this.image, this.name, this.specialization, this.hospital);
 }
+
+class DoctorsList {
+  static List<DoctorsModel> getDoctorsList = [
+    DoctorsModel(
+      './assets/d2.jpeg',
+      'Dr.Maryam Mahwaya',
+      'Cardiologist',
+      'Wakombozi Hospital',
+    ),
+    DoctorsModel('./assets/d1.jpeg', 'Dr. Ethan Mahwaya', 'Urologist',
+        'Mahwaya Urologists'),
+    DoctorsModel('./assets/d3.jpeg', 'Dr. Kipwiru Bwakila', 'Dentist',
+        'Tumaini Medical Center'),
+    DoctorsModel('./assets/d2.jpeg', 'Dr. Sabrina Honero', 'Pediatrician',
+        'STU Medical Center'),
+    DoctorsModel('./assets/d3.jpeg', 'Dr. Konzo Kilakshal',
+        'Orthopedic Surgeon', 'VWX Medical Center'),
+    DoctorsModel('./assets/d2.jpeg', 'Dr. Sarah Wilson', 'Urologist',
+        'YZW Medical Center'),
+  ];
+  static List<DoctorsModel> displayList = List.from(DoctorsList.getDoctorsList);
+}
