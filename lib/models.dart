@@ -81,15 +81,15 @@ class DoctorsList {
       '6:30 PM - 8:30 PM',
     ),
     DoctorsModel(
-      './assets/d2.jpeg',
+      './assets/d4.jpeg',
       'Dr. Sabrina Honero',
       'Pediatrician',
       'STU Medical Center',
       '3:30 PM - 8:30 PM',
     ),
-    DoctorsModel('./assets/d3.jpeg', 'Dr. Konzo Kilakshal',
+    DoctorsModel('./assets/d5.jpeg', 'Dr. Konzo Kilakshal',
         'Orthopedic Surgeon', 'Ubaya Ubwela Medics', '5:30 PM - 7:00 PM'),
-    DoctorsModel('./assets/d2.jpeg', 'Dr. Sarah Wilson', 'Radiologist',
+    DoctorsModel('./assets/d6.jpeg', 'Dr. Sarah Wilson', 'Radiologist',
         'Njiapanda Medics Center', '5:30 PM - 7:00 PM'),
   ];
   static List<DoctorsModel> displayList = List.from(DoctorsList.getDoctorsList);
