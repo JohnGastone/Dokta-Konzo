@@ -87,12 +87,8 @@ class DoctorsList {
       'STU Medical Center',
       '3:30 PM - 8:30 PM',
     ),
-    DoctorsModel(
-        './assets/d3.jpeg',
-        'Dr. Konzo Kilakshal',
-        'Orthopedic Surgeon',
-        'Ubaya Ubwela Orthopaedic Surgeons',
-        '5:30 PM - 7:00 PM'),
+    DoctorsModel('./assets/d3.jpeg', 'Dr. Konzo Kilakshal',
+        'Orthopedic Surgeon', 'Ubaya Ubwela Orthopaedics', '5:30 PM - 7:00 PM'),
     DoctorsModel('./assets/d2.jpeg', 'Dr. Sarah Wilson', 'Radiologist',
         'Njiapanda Medics Center', '5:30 PM - 7:00 PM'),
   ];

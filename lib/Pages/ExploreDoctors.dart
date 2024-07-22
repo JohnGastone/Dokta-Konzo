@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:doktakonzo/models.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,6 +13,7 @@ class ExploreDoctors extends StatefulWidget {
 }
 
 class _ExploreDoctorsState extends State<ExploreDoctors> {
+  List<DoctorsModel> getDoctors = List.from(DoctorsList.displayList);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,66 +87,79 @@ class _ExploreDoctorsState extends State<ExploreDoctors> {
               SizedBox(
                 height: 20,
               ),
-              Container(
-                height: 150,
-                width: 340,
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 231, 226, 232),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 110,
-                        width: 110,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage("./assets/d2.jpeg")),
-                            borderRadius: BorderRadius.circular(15)),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 12.0, left: 5, right: 5),
+                child: SizedBox(
+                  height: 600,
+                  child: ListView.builder(
+                    itemCount: getDoctors.length,
+                    itemBuilder: (context, index) => Container(
+                      height: 150,
+                      width: 340,
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 231, 226, 232),
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                      SizedBox(
-                        width: 10,
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 100,
+                              width: 100,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image:
+                                          AssetImage(getDoctors[index].image!)),
+                                  borderRadius: BorderRadius.circular(15)),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  getDoctors[index].name!,
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  getDoctors[index].hospital!,
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                Text(getDoctors[index].specialization!,
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 15, color: Colors.grey)),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      CupertinoIcons.clock,
+                                      color:
+                                          const Color.fromARGB(255, 90, 9, 104),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(
+                                      getDoctors[index].availability!,
+                                      style: GoogleFonts.poppins(fontSize: 16),
+                                    )
+                                  ],
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Dr. Maryam Mahwaya",
-                            style: GoogleFonts.poppins(
-                                fontSize: 19, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            "Wakombozi hospital",
-                            style: GoogleFonts.poppins(
-                                fontSize: 16, fontWeight: FontWeight.w500),
-                          ),
-                          Text("Cardiology",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 15, color: Colors.grey)),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            children: [
-                              Icon(
-                                CupertinoIcons.clock,
-                                color: const Color.fromARGB(255, 90, 9, 104),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                "4:30 PM - 7:30 PM",
-                                style: GoogleFonts.poppins(fontSize: 16),
-                              )
-                            ],
-                          )
-                        ],
-                      )
-                    ],
+                    ),
                   ),
                 ),
               ),
