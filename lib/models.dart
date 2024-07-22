@@ -88,7 +88,7 @@ class DoctorsList {
       '3:30 PM - 8:30 PM',
     ),
     DoctorsModel('./assets/d3.jpeg', 'Dr. Konzo Kilakshal',
-        'Orthopedic Surgeon', 'Ubaya Ubwela Orthopaedics', '5:30 PM - 7:00 PM'),
+        'Orthopedic Surgeon', 'Ubaya Ubwela Medics', '5:30 PM - 7:00 PM'),
     DoctorsModel('./assets/d2.jpeg', 'Dr. Sarah Wilson', 'Radiologist',
         'Njiapanda Medics Center', '5:30 PM - 7:00 PM'),
   ];

@@ -87,13 +87,14 @@ class _ExploreDoctorsState extends State<ExploreDoctors> {
               SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 12.0, left: 5, right: 5),
-                child: SizedBox(
-                  height: 600,
-                  child: ListView.builder(
-                    itemCount: getDoctors.length,
-                    itemBuilder: (context, index) => Container(
+              SizedBox(
+                height: 600,
+                child: ListView.builder(
+                  itemCount: getDoctors.length,
+                  itemBuilder: (context, index) => Padding(
+                    padding:
+                        const EdgeInsets.only(left: 8.0, right: 8, bottom: 10),
+                    child: Container(
                       height: 150,
                       width: 340,
                       decoration: BoxDecoration(
