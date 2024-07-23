@@ -248,142 +248,70 @@ class _HomepageState extends State<Homepage> {
                       SizedBox(
                         height: 10,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            height: 190,
-                            width: 150,
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 226, 206, 230),
-                                borderRadius: BorderRadius.circular(20)),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.topLeft,
-                                    child: CircleAvatar(
-                                      radius: 28,
-                                      backgroundImage:
-                                          AssetImage("./assets/cardio.png"),
-                                    ),
-                                  ),
-                                  Padding(
-                                      padding: const EdgeInsets.only(right: 25),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            "Cardio",
-                                            style: GoogleFonts.poppins(
-                                                fontSize: 28,
-                                                fontWeight: FontWeight.w600),
-                                          ),
-                                          Text("12 doctors",
-                                              style: GoogleFonts.poppins(
-                                                  fontSize: 20)),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Row(
-                                            children: [
-                                              CircleAvatar(
-                                                radius: 18,
-                                                backgroundImage: AssetImage(
-                                                    "./assets/konzo1.png"),
-                                              ),
-                                              CircleAvatar(
-                                                radius: 18,
-                                                backgroundImage: AssetImage(
-                                                    "./assets/d2.jpeg"),
-                                              ),
-                                              CircleAvatar(
-                                                radius: 18,
-                                                child: Text(
-                                                  "+5",
-                                                  style: GoogleFonts.poppins(
-                                                      fontSize: 13,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                                ),
-                                              ),
-                                            ],
-                                          )
-                                        ],
-                                      )),
-                                ],
+                      Container(
+                        height: 190,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 226, 206, 230),
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: CircleAvatar(
+                                  radius: 28,
+                                  backgroundImage:
+                                      AssetImage("./assets/cardio.png"),
+                                ),
                               ),
-                            ),
+                              Padding(
+                                  padding: const EdgeInsets.only(right: 25),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Cardio",
+                                        style: GoogleFonts.poppins(
+                                            fontSize: 28,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      Text("12 doctors",
+                                          style: GoogleFonts.poppins(
+                                              fontSize: 20)),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Row(
+                                        children: [
+                                          CircleAvatar(
+                                            radius: 18,
+                                            backgroundImage: AssetImage(
+                                                "./assets/konzo1.png"),
+                                          ),
+                                          CircleAvatar(
+                                            radius: 18,
+                                            backgroundImage:
+                                                AssetImage("./assets/d2.jpeg"),
+                                          ),
+                                          CircleAvatar(
+                                            radius: 18,
+                                            child: Text(
+                                              "+5",
+                                              style: GoogleFonts.poppins(
+                                                  fontSize: 13,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  )),
+                            ],
                           ),
-                          Container(
-                            height: 190,
-                            width: 150,
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 226, 206, 230),
-                                borderRadius: BorderRadius.circular(20)),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  Align(
-                                    alignment: Alignment.topLeft,
-                                    child: CircleAvatar(
-                                      radius: 28,
-                                      backgroundImage:
-                                          AssetImage("./assets/tooth.png"),
-                                    ),
-                                  ),
-                                  Padding(
-                                      padding: const EdgeInsets.only(right: 25),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            "Dental",
-                                            style: GoogleFonts.poppins(
-                                                fontSize: 28,
-                                                fontWeight: FontWeight.w600),
-                                          ),
-                                          Text("09 doctors",
-                                              style: GoogleFonts.poppins(
-                                                  fontSize: 20)),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Row(
-                                            children: [
-                                              CircleAvatar(
-                                                radius: 18,
-                                                backgroundImage: AssetImage(
-                                                    "./assets/d3.jpeg"),
-                                              ),
-                                              CircleAvatar(
-                                                radius: 18,
-                                                backgroundImage: AssetImage(
-                                                    "./assets/d4.jpeg"),
-                                              ),
-                                              CircleAvatar(
-                                                radius: 18,
-                                                child: Text(
-                                                  "+5",
-                                                  style: GoogleFonts.poppins(
-                                                      fontSize: 13,
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                                ),
-                                              ),
-                                            ],
-                                          )
-                                        ],
-                                      )),
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
+                        ),
                       ),
                     ],
                   ),

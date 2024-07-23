@@ -94,3 +94,9 @@ class DoctorsList {
   ];
   static List<DoctorsModel> displayList = List.from(DoctorsList.getDoctorsList);
 }
+
+class SpecialtyCardModel {
+  String? image;
+  String? specialty;
+  String? specialistCount;
+}
