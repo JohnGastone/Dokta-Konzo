@@ -94,8 +94,8 @@ class _AppointmentsPageState extends State<AppointmentsPage> {
                               height: 30,
                               width: 30,
                               decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 66, 18, 118),
                                 borderRadius: BorderRadius.circular(10),
+                                color: Color.fromARGB(255, 66, 18, 118),
                               ),
                               child: Center(
                                 child: Icon(

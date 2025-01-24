@@ -255,8 +255,7 @@ class _CreateAppointmentState extends State<CreateAppointment> {
     );
   }
 
-  Widget _buildFeeOption(String label, String price, IconData icon,
-      {bool defaultSelected = false}) {
+  Widget _buildFeeOption(String label, String price, IconData icon) {
     final isSelected = selectedFeeOption == label;
 
     return GestureDetector(

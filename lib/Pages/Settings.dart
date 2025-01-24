@@ -142,7 +142,7 @@ class _SettingsPagesState extends State<SettingsPage> {
                     ),
                     DropdownButtonHideUnderline(
                       child: DropdownButton<String>(
-                        value: _selectedLanguage,
+                        value: 'Select a language',
                         items: <String>["English", "Kiswahili"]
                             .map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
